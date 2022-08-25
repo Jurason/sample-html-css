@@ -64,17 +64,33 @@
             font-size: 26px;
             font-weight: 700;
         }
-        .option-addition-info {
-            font-size: 18px;
-            font-weight: 600;
+
+        .option-addition-info:hover {
             cursor: pointer;
         }
 
-            .option-addition-info::after{
-                content: url("./images/arrow.png");
-                vertical-align: middle;
-                margin-left: 10px;
+        .option-addition-info-text {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 600;
+            margin-right: 10px;
+            transition-duration: 0.2s;
+        }
+
+        .additional-info-arrow {
+            content: url("./images/arrow.png");
+            transition-duration: 0.2s;
+        }
+
+            .option-addition-info-text:hover{
+                margin-right: 15px;
+                opacity: .7;
+
             }
+
+            /*.additional-info-arrow:hover{*/
+            /*    margin-left: 5px;*/
+            /*  }*/
 
 @font-face {
     font-family: "SpaceGrotesk";
