@@ -1,0 +1,87 @@
+
+.main-wrapper {
+    max-width: 1256px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    font-family: 'Space Grotesk', system-ui;
+}
+.title-container {
+    display: flex;
+    margin-bottom: 100px;
+}
+    .title-right {
+        max-width: 500px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.5;
+        opacity: .7;
+    }
+    .title-left {
+        max-width: 610px;
+    }
+
+        .remarks {
+            font-size: 14px;
+            font-weight: 500;
+            opacity: .7;
+        }
+        .hymn {
+            font-size: 54px;
+            font-weight: 700;
+            margin-top: 30px;
+            line-height: .9;
+        }
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+    .item {
+        background-color: #F9F9F9;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        height: 220px;
+        width: 392px;
+        padding: 40px 20px;
+        border-radius: 10px;
+    }
+
+        .option-image {
+            text-align: center;
+            margin-right: 40px;
+            min-width: 50px;
+        }
+
+        .option-number {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .option-name {
+            font-size: 26px;
+            font-weight: 700;
+        }
+        .option-addition-info {
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+            .option-addition-info::after{
+                content: url("./images/arrow.png");
+                vertical-align: middle;
+                margin-left: 10px;
+            }
+
+@font-face {
+    font-family: "SpaceGrotesk";
+    src: url("./fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+
