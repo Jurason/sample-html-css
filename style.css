@@ -1,4 +1,7 @@
-
+body {
+    background-color: darkslategray;
+    opacity: .7;
+}
 .main-wrapper {
     max-width: 1256px;
     margin: auto;
@@ -8,7 +11,9 @@
 }
 .title-container {
     display: flex;
+    justify-content: space-between;
     margin-bottom: 100px;
+    gap: 40px;
 }
     .title-right {
         max-width: 500px;
@@ -20,7 +25,6 @@
     .title-left {
         max-width: 610px;
     }
-
         .remarks {
             font-size: 14px;
             font-weight: 500;
@@ -32,31 +36,33 @@
             margin-top: 30px;
             line-height: .9;
         }
-
 .options-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 40px;
 }
-
     .item {
         background-color: #F9F9F9;
         box-sizing: border-box;
         display: flex;
         align-items: center;
         height: 220px;
-        width: 392px;
+        width: calc(33.33% - 27px);
         padding: 40px 20px;
         border-radius: 10px;
     }
-
         .option-image {
             text-align: center;
-            margin-right: 40px;
+            margin-right: 10%;
             min-width: 50px;
         }
 
+        .item-text {
+
+        }
         .option-number {
+            margin-bottom: 10px;
             font-size: 20px;
             font-weight: 600;
         }
@@ -64,33 +70,27 @@
             font-size: 26px;
             font-weight: 700;
         }
-
         .option-addition-info:hover {
             cursor: pointer;
         }
-
         .option-addition-info-text {
             display: inline-block;
             font-size: 18px;
             font-weight: 600;
             margin-right: 10px;
+            margin-top: 20px;
             transition-duration: 0.2s;
         }
-
         .additional-info-arrow {
-            content: url("./images/arrow.png");
+            content: url("./images/arrow.svg");
             transition-duration: 0.2s;
         }
-
             .option-addition-info-text:hover{
                 margin-right: 15px;
                 opacity: .7;
 
-            }
 
-            /*.additional-info-arrow:hover{*/
-            /*    margin-left: 5px;*/
-            /*  }*/
+            }
 
 @font-face {
     font-family: "SpaceGrotesk";
@@ -99,5 +99,40 @@
     font-weight: normal;
 }
 
+@media screen and (max-width: 980px){
+    .item {
+        width: calc(50% - 27px);
+    }
+    body {
+        background-color: dimgray;
+        opacity: .9;
+    }
+}
+@media screen and (max-width: 650px){
+    body {
+        background-color: lightgray;
+        opacity: .9;
+    }
+    .title-container {
+        display: block;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .title-right {
+        display: inline-block;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .remarks {
+        display: none;
+    }
+    .hymn {
+        font-size: 46px;
+        margin-top: 0;
+    }
+    .item {
+        width: 66%;
+    }
+}
 
 
