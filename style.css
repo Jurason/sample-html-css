@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
-    gap: 40px;
+    gap: 2.5%;
 }
     .title-right {
         max-width: 500px;
