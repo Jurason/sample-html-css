@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css"/>
+
 </head>
 <body>
 <section class="main-wrapper">
     <section class="title-container">
         <div class="title-left">
-            <div class="remarks">SERVICES</div>
+            <button class="remarks">SERVICES</button>
             <div class="hymn">We're a team of creatives who are excited about unique ideas.</div>
         </div>
         <div class="title-right">From stunning product design to flawless code, we embrace consumer expectations to deliver high-quality software solutions</div>
@@ -70,7 +72,21 @@
 
 </section>
 
-<script></script>
+<script>
+    const button = document.querySelector('.remarks')
+    const target = document.querySelector('.hymn')
+    button.addEventListener('click', generateJoke)
+
+    async function generateJoke(){
+        const response = await fetch('https://icanhazdadjoke.com/', {
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        const joke = await response.json()
+        target.innerHTML = joke.joke
+    }
+</script>
 </body>
 </html>
 

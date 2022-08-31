@@ -26,6 +26,9 @@ body {
         max-width: 610px;
     }
         .remarks {
+            padding:5px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px #fff;
             font-size: 14px;
             font-weight: 500;
             opacity: .7;
