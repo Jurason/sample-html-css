@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap'); @import url('http://fonts.cdnfonts.com/css/basier');</style>
+</head>
+<body>
+<div class="main">
+    <div class="left-block">
+        <div class="header">
+            <div class="remark font-grotesk">GET IN TOUCH</div>
+            <div class="title font-grotesk">Contact us to discuss your project</div>
+        </div>
+        <div class="form font-basier">
+            <div class="form-name">
+                <div class="title-small">Name (required)</div>
+                    <input class="input-small" type="text" placeholder="Your full name">
+            </div>
+            <div class="form-name">
+                <div class="title-small">Email (required)</div>
+                <input class="input-small" type="email" placeholder="We use it to contact you">
+            </div>
+        </div>
+        <div class="form-comments font-basier">
+            <div class="title-small">Message</div>
+            <textarea class="input-big" type="text" placeholder="Tell us briefly about your project or ask us anything"></textarea>
+        </div>
+        <div class="attach-file font-basier">
+            <input class="attach-file-input" type="file" id="myFile" name="filename" onchange="showType(this)">
+            <span class="attach-img"></span>
+            <span class="attached-file-name"><span class="attach-file-text-1">Attach file </span><span class="attach-file-text-2">(max size 20mb)</span></span>
+        </div>
+        <button class="send-button font-grotesk" onclick="sendFile()">Send message</button>
+    </div>
+    <div class="right-block">
+        <div class="header">
+            <div class="remark font-grotesk">CONNECT</div>
+            <div class="title font-grotesk">Email us</div>
+        </div>
+        <div class="contacts font-basier">
+            <div class="contacts-1">
+                <div class="title-small-right">Project inquiry</div>
+                <div class="contacts-content">sales@volpis.com</div>
+            </div>
+            <div class="contacts-2">
+                <div class="title-small-right">Other question</div>
+                <div class="contacts-content">info@volpis.com</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="app2.js"></script>
+</body>
+</html>
