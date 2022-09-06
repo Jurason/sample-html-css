@@ -85,7 +85,7 @@ body {
             transition-duration: 0.2s;
         }
         .additional-info-arrow {
-            content: url("./images/arrow.svg");
+            content: url("../images/arrow.svg");
             transition-duration: 0.2s;
         }
             .option-addition-info-text:hover{
@@ -97,7 +97,7 @@ body {
 
 @font-face {
     font-family: "SpaceGrotesk";
-    src: url("./fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
+    src: url("../fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
