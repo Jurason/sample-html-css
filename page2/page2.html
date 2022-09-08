@@ -8,37 +8,58 @@
 </head>
 <body>
 <div class="main">
+
+    <!--   / left block-->
     <div class="left-block">
+
+        <!--        header-->
         <div class="header">
             <div class="remark font-grotesk">GET IN TOUCH</div>
             <div class="title font-grotesk">Contact us to discuss your project</div>
         </div>
-        <div class="form font-basier">
-            <div class="form-name">
-                <div class="title-small">Name <span class="media-hidden-text">(required)</span></div>
-                    <input class="input-small" type="text" placeholder="Your full name">
+        <!--       / header-->
+
+            <!--        form-->
+            <div class="form font-basier">
+                <!--                name email inputs-->
+                <div class="form-name">
+                    <div class="title-small">Name <span class="media-hidden-text">(required)</span></div>
+                        <input class="input-small" type="text" placeholder="Your full name">
+                </div>
+                <div class="form-name">
+                    <div class="title-small">Email <span class="media-hidden-text">(required)</span></div>
+                    <input class="input-small" type="email" placeholder="We use it to contact you">
+                </div>
             </div>
-            <div class="form-name">
-                <div class="title-small">Email <span class="media-hidden-text">(required)</span></div>
-                <input class="input-small" type="email" placeholder="We use it to contact you">
+
+                <!--            comments text area-->
+                <div class="form-comments font-basier">
+                    <div class="title-small comments-title">Message</div>
+                    <textarea class="input-big" type="text" placeholder="Tell us briefly about your project or ask us anything"></textarea>
+                </div>
+            <!--       / form-->
+
+            <!--            footer-->
+            <div class="attach-file font-basier">
+                <input class="attach-file-input" type="file" id="myFile" name="filename" onchange="showType(this)">
+                <span class="attach-img"></span>
+                <span class="attached-file-name"><span class="attach-file-text-1">Attach file </span><span class="attach-file-text-2">(max size 20mb)</span></span>
             </div>
-        </div>
-        <div class="form-comments font-basier">
-            <div class="title-small comments-title">Message</div>
-            <textarea class="input-big" type="text" placeholder="Tell us briefly about your project or ask us anything"></textarea>
-        </div>
-        <div class="attach-file font-basier">
-            <input class="attach-file-input" type="file" id="myFile" name="filename" onchange="showType(this)">
-            <span class="attach-img"></span>
-            <span class="attached-file-name"><span class="attach-file-text-1">Attach file </span><span class="attach-file-text-2">(max size 20mb)</span></span>
-        </div>
-        <button class="send-button font-grotesk" onclick="sendFile()">Send message</button>
+            <button class="send-button font-grotesk" onclick="sendFile()">Send message</button>
+            <!--          /  footer-->
     </div>
+    <!--   / left block-->
+
+    <!--    right block-->
     <div class="right-block">
+
+        <!--        header-->
         <div class="header">
             <div class="remark font-grotesk">CONNECT</div>
             <div class="title font-grotesk">Email us</div>
         </div>
+        <!--       / header-->
+
         <div class="contacts font-basier">
             <div class="contacts-1">
                 <div class="title-small-right">Project inquiry</div>
@@ -50,6 +71,8 @@
             </div>
         </div>
     </div>
+    <!--   / right block-->
+
 </div>
 
 
