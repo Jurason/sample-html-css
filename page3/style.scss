@@ -1,9 +1,21 @@
-$color-main: red;
+@import './normalize.scss';
 
-body{
-  background-color: $color-main;
+// ==== Mixins ==== //
+
+@mixin font-haas {
+  font-family: 'Neue Haas Grotesk Text', sans-serif;
 }
-h1 {
-  margin: auto;
-  ;
-}
+
+// ==== Mixins ==== //
+
+  $color-main: green;
+  $color-secondary: black;
+
+  body{
+    background-color: $color-main;
+    font-family: 'Space Grotesk', serif;
+  }
+  h1 {
+    color: $color-secondary;
+    padding-bottom: 100px;
+  }
