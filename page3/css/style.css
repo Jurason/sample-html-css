@@ -307,12 +307,35 @@ template {
   display: none;
 }
 
-body {
-  background-color: green;
-  font-family: "Space Grotesk", serif;
+.section-main-cards-content {
+  height: 600px;
+  max-width: 90%;
+  display: flex;
+  margin-top: 55px;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: space-between;
 }
-
-h1 {
-  color: black;
-  padding-bottom: 100px;
+.section-main-cards-content-item {
+  height: 100%;
+  width: calc(33% - 26px);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.19) 0%, rgba(0, 0, 0, 0) 63.81%);
+  border-radius: 16px;
+}
+.section-main-cards-content-item-text {
+  font-family: "Neue Haas Grotesk Text", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 40px 160px 440px 40px;
+  color: #fff;
+}
+.section-main-cards-content-item-text-subtitle {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+.section-main-cards-content-item-text-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
 }
