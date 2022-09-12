@@ -307,19 +307,23 @@ template {
   display: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .section-main-cards-content {
-  height: 600px;
-  max-width: 90%;
-  display: flex;
-  margin-top: 55px;
+  width: 90%;
   margin-right: auto;
   margin-left: auto;
+  height: 600px;
+  display: flex;
+  margin-top: 55px;
   justify-content: space-between;
 }
 .section-main-cards-content-item {
   height: 100%;
-  width: calc(33% - 26px);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.19) 0%, rgba(0, 0, 0, 0) 63.81%);
+  width: 31.4%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 37.89%);
   border-radius: 16px;
 }
 .section-main-cards-content-item-text {
@@ -338,4 +342,99 @@ template {
   font-weight: 700;
   font-size: 40px;
   line-height: 48px;
+}
+.section-main-cards-content .type-2 {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.19) 0%, rgba(0, 0, 0, 0) 63.81%);
+}
+
+.section-studies-content {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 660px;
+}
+.section-studies-content .header {
+  font-family: "Neue Haas Grotesk Text", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 58px;
+  margin-bottom: 44px;
+}
+.section-studies-content .container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 32px;
+}
+.section-studies-content .container .item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 18.5%;
+}
+.section-studies-content .container .item-pic {
+  width: 100%;
+}
+.section-studies-content .container .item-text {
+  font-family: "Neue Haas Grotesk Text", sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 24px;
+}
+.section-studies-content .container .item-text-case {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+}
+.section-studies-content .container .item-text-case a {
+  text-decoration: none;
+  color: #4D44C6;
+}
+.section-studies-content .container .item-text-title {
+  margin-top: 8px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: #000000;
+}
+.section-studies-content .container .item-text-content {
+  margin-top: 16px;
+  color: #3D3D4E;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.section-explore-studies-content {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: "Neue Haas Grotesk Text", sans-serif;
+  margin-top: 90px;
+  display: flex;
+  height: 650px;
+}
+.section-explore-studies-content .main {
+  display: flex;
+  flex-direction: column;
+  width: 17.5%;
+  height: 100%;
+}
+.section-explore-studies-content .main-title {
+  color: #000000;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: right;
+}
+.section-explore-studies-content .main-button {
+  margin-top: 32px;
+  min-width: 107px;
+  min-height: 36px;
+  float: right;
+}
+.section-explore-studies-content .picture {
+  width: 31%;
+  height: 100%;
 }
