@@ -315,13 +315,12 @@ template {
   width: 90%;
   margin-right: auto;
   margin-left: auto;
-  height: 600px;
   display: flex;
   margin-top: 55px;
   justify-content: space-between;
 }
 .section-main-cards-content-item {
-  height: 100%;
+  height: 600px;
   width: 31.4%;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 37.89%);
   border-radius: 16px;
@@ -351,7 +350,6 @@ template {
   width: 90%;
   margin-right: auto;
   margin-left: auto;
-  height: 660px;
 }
 .section-studies-content .header {
   font-family: "Neue Haas Grotesk Text", sans-serif;
@@ -370,9 +368,8 @@ template {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 18.5%;
 }
-.section-studies-content .container .item-pic {
+.section-studies-content .container .item-pic img {
   max-width: 100%;
 }
 .section-studies-content .container .item-text {
@@ -392,18 +389,21 @@ template {
   color: #4D44C6;
 }
 .section-studies-content .container .item-text-title {
-  margin-top: 8px;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
   color: #000000;
+  margin-top: 8px;
 }
 .section-studies-content .container .item-text-content {
-  margin-top: 16px;
   color: #3D3D4E;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
+  margin-top: 16px;
+}
+.section-studies-content .container .item {
+  width: 18.5%;
 }
 
 .section-explore-studies-content {
@@ -414,7 +414,6 @@ template {
   margin-top: 90px;
   display: flex;
   justify-content: space-between;
-  height: 650px;
 }
 .section-explore-studies-content .main {
   display: flex;
@@ -431,19 +430,69 @@ template {
 }
 .section-explore-studies-content .main-button {
   margin-top: 32px;
-  min-width: 107px;
-  min-height: 36px;
-  border: 5px solid;
+  text-align: right;
+}
+.section-explore-studies-content .main-button a {
+  text-decoration: none;
+  color: #000000;
 }
 .section-explore-studies-content .main-button .additional-info-arrow {
-  content: url("./img/arrow.svg");
+  display: inline-block;
+  margin-left: 8px;
   transition-duration: 0.2s;
 }
 .section-explore-studies-content .picture {
   width: 31%;
   height: 100%;
 }
+.section-explore-studies-content .picture img {
+  max-width: 100%;
+  margin-top: 40px;
+}
 .section-explore-studies-content .carousel {
   width: 43%;
   display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.section-explore-studies-content .carousel .item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.section-explore-studies-content .carousel .item-pic img {
+  max-width: 100%;
+}
+.section-explore-studies-content .carousel .item-text {
+  font-family: "Neue Haas Grotesk Text", sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 24px;
+}
+.section-explore-studies-content .carousel .item-text-case {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+}
+.section-explore-studies-content .carousel .item-text-case a {
+  text-decoration: none;
+  color: #4D44C6;
+}
+.section-explore-studies-content .carousel .item-text-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: #000000;
+  margin-top: 8px;
+}
+.section-explore-studies-content .carousel .item-text-content {
+  color: #3D3D4E;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  margin-top: 16px;
+}
+.section-explore-studies-content .carousel .item {
+  width: 47.5%;
 }
