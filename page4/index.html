@@ -7,23 +7,32 @@
 </head>
 <body>
 <div class="wrapper">
-    <div class="header"><h1>Title</h1></div>
-    <div class="action">
-        <input type="text" placeholder="Enter number of pages">
-        <input type="text" placeholder="Enter range">
-    </div>
+    <div class="header"><h1>PAGINATE ROW</h1></div>
+        <div class="action">
+            <input class="input-small pages-quantity" placeholder="N">
+            <input class="input-small pages-range" placeholder="R">
+            <input class="input-small page-current" placeholder="P">
+        </div>
+        <div class="render"><button class="render-button">RENDER</button></div>
     <div class="wrapper-carousel">
         <div class="carousel"></div>
     </div>
 </div>
 </body>
 <script>
-    const TOTAL_PAGES = 36
-    const currentPage = 1
-    const RANGE = 5
+    let totalPages = 3
+    let currentPage = 2
+    let range = 1
+    let pagesArray = []
 
     const carousel = document.querySelector('.carousel')
-    const pagesArray = paginate(TOTAL_PAGES, currentPage, RANGE)
+    const inputPagesNumber = document.querySelector('.pages-quantity')
+    const inputRange = document.querySelector('.pages-range')
+    const inputCurrentPage = document.querySelector('.page-current')
+    const renderButton = document.querySelector('.render-button')
+
+    //initial state
+    pagesArray = paginate(totalPages, currentPage, range)
     pagesArray.forEach(el => {
         const page = document.createElement('div')
         page.classList.add('page')
@@ -47,6 +56,53 @@
         })
     })
 
+    //events
+    renderButton.addEventListener('click', () => {
+        //preparing
+        pagesArray = []
+        while(carousel.firstChild){
+            carousel.removeChild(carousel.firstChild)
+        }
+        //
+        totalPages = parseInt(inputPagesNumber.value)
+        range = parseInt(inputRange.value)
+        currentPage = parseInt(inputCurrentPage.value)
+        if(!totalPages || !range || !currentPage){
+            alert('Please, enter all requirement data!')
+            inputPagesNumber.value = ''
+            inputRange.value = ''
+            inputCurrentPage.value = ''
+            return
+        }
+        //
+        pagesArray = paginate(totalPages, currentPage, range)
+        pagesArray.forEach(el => {
+            const page = document.createElement('div')
+            page.classList.add('page')
+            page.textContent = el.toString()
+            if(el === currentPage) page.classList.add('active')
+            switch(el){
+                case 1:
+                    page.classList.add('first')
+                    break
+                case pagesArray[pagesArray.length - 1]:
+                    page.classList.add('last')
+                    break
+            }
+            carousel.append(page)
+
+            page.addEventListener('click', () => {
+                const activePage = carousel.querySelector('.active')
+                if(activePage){
+                    activePage.classList.remove('active')
+                }
+                page.classList.add('active')
+            })
+        })
+        //
+    })
+
+    //functions
     function paginate (length, currentPage, size) {
         if(currentPage > length){
             return []
@@ -72,5 +128,7 @@
         result.push(1, ...Array.from({length: size * 2 + 1}, (v, i) => currentPage - size + i), length)
         return result
     }
+
+
 </script>
 </html>
