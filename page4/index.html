@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="header"><h1>Title</h1></div>
+    <div class="action">
+        <input type="text" placeholder="Enter number of pages">
+        <input type="text" placeholder="Enter range">
+    </div>
+    <div class="wrapper-carousel">
+        <div class="carousel"></div>
+    </div>
+</div>
+</body>
+<script>
+    const TOTAL_PAGES = 36
+    const currentPage = 1
+    const RANGE = 5
+
+    const carousel = document.querySelector('.carousel')
+    const pagesArray = paginate(TOTAL_PAGES, currentPage, RANGE)
+    pagesArray.forEach(el => {
+        const page = document.createElement('div')
+        page.classList.add('page')
+        page.textContent = el.toString()
+        switch(el){
+            case 1:
+                page.classList.add('first')
+                break
+            case pagesArray[pagesArray.length - 1]:
+                page.classList.add('last')
+                break
+        }
+        carousel.append(page)
+
+        page.addEventListener('click', () => {
+            const activePage = carousel.querySelector('.active')
+            if(activePage){
+                activePage.classList.remove('active')
+            }
+            page.classList.add('active')
+        })
+    })
+
+    function paginate (length, currentPage, size) {
+        if(currentPage > length){
+            return []
+        }
+        const result = []
+        const minPaginatedSize = size * 2 + 1
+
+        if(minPaginatedSize >= length - 1) {
+            result.push(...Array.from({length: length}, (v, i) => 1 + i))
+            return result
+        }
+        //left interval
+        if(currentPage - size < 2){
+            result.push(...Array.from({length: minPaginatedSize + 1}, (v, i) => 1 + i), length)
+            return result
+        }
+        //right interval
+        if(currentPage + size > length - 1){
+            result.push(1, ...Array.from({length: minPaginatedSize + 1}, (v, i) => length - minPaginatedSize + i))
+            return result
+        }
+        //middle interval
+        result.push(1, ...Array.from({length: size * 2 + 1}, (v, i) => currentPage - size + i), length)
+        return result
+    }
+</script>
+</html>
