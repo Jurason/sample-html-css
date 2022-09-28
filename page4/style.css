@@ -33,17 +33,31 @@ body {
     min-height: 30%;
 }
 
-.input-small {
+.item {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.input {
     font-size: 100px;
     color: #828084;
     height: 100%;
-    width: 20%;
     align-items: center;
     text-align: center;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.05);
     border: none;
     outline: none;
+}
+
+.invalid-input {
+    color: #ff6c6c;
+}
+
+.subtitle {
+    margin-top: 10px;
+    text-align: center;
 }
 
 ::placeholder{

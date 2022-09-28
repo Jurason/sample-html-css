@@ -9,9 +9,18 @@
 <div class="wrapper">
     <div class="header"><h1>PAGINATE ROW</h1></div>
         <div class="action">
-            <input class="input-small pages-quantity" placeholder="N">
-            <input class="input-small pages-range" placeholder="R">
-            <input class="input-small page-current" placeholder="P">
+            <div class="item">
+                <input class="input pages-quantity" placeholder="N">
+                <div class="subtitle">NUMBER OF PAGES</div>
+            </div>
+            <div class="item">
+                <input class="input pages-range" placeholder="R">
+                <div class="subtitle">RANGE</div>
+            </div>
+            <div class="item">
+                <input class="input page-current" placeholder="P">
+                <div class="subtitle">CURRENT PAGE</div>
+            </div>
         </div>
         <div class="render"><button class="render-button">RENDER</button></div>
     <div class="wrapper-carousel">
@@ -30,6 +39,11 @@
     const inputRange = document.querySelector('.pages-range')
     const inputCurrentPage = document.querySelector('.page-current')
     const renderButton = document.querySelector('.render-button')
+
+    inputPagesNumber.value = ''
+    inputRange.value = ''
+    inputCurrentPage.value = ''
+    
 
     //initial state
     pagesArray = paginate(totalPages, currentPage, range)
@@ -64,6 +78,20 @@
             carousel.removeChild(carousel.firstChild)
         }
         //
+        if(inputRange.value > 10){
+            alert('Range should be 10 or less')
+            inputPagesNumber.value = ''
+            inputRange.value = ''
+            inputCurrentPage.value = ''
+            return
+        }
+        if(parseInt(inputCurrentPage.value) > parseInt(inputPagesNumber.value)){
+            alert('Current page should be less or equal number of pages')
+            inputPagesNumber.value = ''
+            inputRange.value = ''
+            inputCurrentPage.value = ''
+            return
+        }
         totalPages = parseInt(inputPagesNumber.value)
         range = parseInt(inputRange.value)
         currentPage = parseInt(inputCurrentPage.value)
@@ -103,8 +131,28 @@
     })
     inputRange.addEventListener('input', () => {
         if(inputRange.value > 10){
-            alert('Range could not be more then 10')
-            inputRange.value = ''
+            inputRange.classList.add('invalid-input')
+        }
+        else{
+            inputRange.classList.remove('invalid-input')
+        }
+    })
+
+    inputCurrentPage.addEventListener('input', () => {
+        if(parseInt(inputCurrentPage.value) > parseInt(inputPagesNumber.value)){
+            inputCurrentPage.classList.add('invalid-input')
+        }
+        else{
+            inputCurrentPage.classList.remove('invalid-input')
+        }
+    })
+
+    inputPagesNumber.addEventListener('input', () => {
+        if(parseInt(inputCurrentPage.value) > parseInt(inputPagesNumber.value)){
+            inputCurrentPage.classList.add('invalid-input')
+        }
+        else{
+            inputCurrentPage.classList.remove('invalid-input')
         }
     })
     //functions
