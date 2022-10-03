@@ -69,22 +69,30 @@ $width: 90%;
 }
 // ==== Section-main-cards ==== //
 .section-main-cards {
+  margin-bottom: 90px;
   &-content {
     @include horizontal-align;
     margin-top: 55px;
-    margin-bottom: 90px;
+    margin-bottom: 23px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     &-item {
+      position: relative;
+      .image {
+        min-width: 100%;
+        img {
+          max-width: 100%;
+        }
+      }
+      overflow: hidden;
       background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 37.89%);
       border-radius: 16px;
-      border: 1px solid red;
       &-text {
         @include font-haas;
         display: flex;
         flex-direction: column;
-        margin: 40px 160px 440px 40px;
+        //margin: 40px 160px 440px 40px;
         color: $color-white;
         &-subtitle {
           font-weight: 500;
@@ -98,11 +106,16 @@ $width: 90%;
         }
       }
       &-popup {
+
       }
     }
     .type-2 {
       background: linear-gradient(180deg, rgba(0, 0, 0, 0.19) 0%, rgba(0, 0, 0, 0) 63.81%);
     }
+  }
+  .carousel {
+    display: none;
+    text-align: center;
   }
 }
 // ==== Section-studies ==== //
@@ -487,6 +500,54 @@ $width: 90%;
           &-title {
             font-size: 24px;
             line-height: 32px;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .section-main-cards {
+    width: 100%;
+    &-content {
+      display: none;
+    }
+    .carousel {
+      @include font-haas;
+      display: block;
+      width: 90%;
+      margin: auto;
+      &-header {
+        @include title;
+        text-align: left;
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+      &-item {
+        img {
+          max-width: 100%;
+        }
+      }
+      &-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #carousel-prev-toggle {
+          cursor: pointer;
+        }
+        #carousel-next-toggle {
+          cursor: pointer;
+        }
+        #carousel-icons {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          img {
+            margin-right: 2px;
+            margin-left: 2px;
+            opacity: .1;
           }
         }
 

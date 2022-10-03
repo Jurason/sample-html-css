@@ -311,26 +311,35 @@ template {
   box-sizing: border-box;
 }
 
+.section-main-cards {
+  margin-bottom: 90px;
+}
 .section-main-cards-content {
   width: 90%;
   margin-right: auto;
   margin-left: auto;
   margin-top: 55px;
-  margin-bottom: 90px;
+  margin-bottom: 23px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 .section-main-cards-content-item {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 37.89%);
   border-radius: 16px;
-  border: 1px solid red;
+}
+.section-main-cards-content-item .image {
+  min-width: 100%;
+}
+.section-main-cards-content-item .image img {
+  max-width: 100%;
 }
 .section-main-cards-content-item-text {
   font-family: "Neue Haas Grotesk Text", sans-serif;
   display: flex;
   flex-direction: column;
-  margin: 40px 160px 440px 40px;
   color: #fff;
 }
 .section-main-cards-content-item-text-subtitle {
@@ -345,6 +354,10 @@ template {
 }
 .section-main-cards-content .type-2 {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.19) 0%, rgba(0, 0, 0, 0) 63.81%);
+}
+.section-main-cards .carousel {
+  display: none;
+  text-align: center;
 }
 
 .section-studies-content {
@@ -887,4 +900,53 @@ template {
 .section-own-content .container-lower .item-text-title {
   font-size: 24px;
   line-height: 32px;
+}
+
+@media screen and (max-width: 320px) {
+  .section-main-cards {
+    width: 100%;
+  }
+  .section-main-cards-content {
+    display: none;
+  }
+  .section-main-cards .carousel {
+    font-family: "Neue Haas Grotesk Text", sans-serif;
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+  .section-main-cards .carousel-header {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: #000000;
+    margin-top: 8px;
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  .section-main-cards .carousel-item img {
+    max-width: 100%;
+  }
+  .section-main-cards .carousel-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .section-main-cards .carousel-toggle #carousel-prev-toggle {
+    cursor: pointer;
+  }
+  .section-main-cards .carousel-toggle #carousel-next-toggle {
+    cursor: pointer;
+  }
+  .section-main-cards .carousel-toggle #carousel-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .section-main-cards .carousel-toggle #carousel-icons img {
+    margin-right: 2px;
+    margin-left: 2px;
+    opacity: 0.1;
+  }
 }
