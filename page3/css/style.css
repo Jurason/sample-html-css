@@ -332,9 +332,13 @@ template {
 }
 .section-main-cards-content-item .image {
   min-width: 100%;
+  transition: transform 0.7s;
 }
 .section-main-cards-content-item .image img {
   max-width: 100%;
+}
+.section-main-cards-content-item .image:hover {
+  transform: scale(1.1);
 }
 .section-main-cards-content-item-text {
   font-family: "Neue Haas Grotesk Text", sans-serif;
@@ -905,6 +909,7 @@ template {
 @media screen and (max-width: 320px) {
   .section-main-cards {
     width: 100%;
+    margin-bottom: 40px;
   }
   .section-main-cards-content {
     display: none;
@@ -916,14 +921,38 @@ template {
     margin: auto;
   }
   .section-main-cards .carousel-header {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 26px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
     color: #000000;
-    margin-top: 8px;
+    margin-bottom: 16px;
     text-align: left;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    margin-top: 56px;
+  }
+  .section-main-cards .carousel-item {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 23px;
+  }
+  .section-main-cards .carousel-item ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .section-main-cards .carousel-item ul .slide {
+    display: none;
+  }
+  .section-main-cards .carousel-item ul .slide img {
+    width: 100%;
+    height: 100%;
+  }
+  .section-main-cards .carousel-item ul .slide[data-active] {
+    display: block;
+    z-index: 1;
+    transition: transform 0.6s;
+  }
+  .section-main-cards .carousel-item ul .slide:hover {
+    transform: scale(1.1);
   }
   .section-main-cards .carousel-item img {
     max-width: 100%;
@@ -933,20 +962,82 @@ template {
     align-items: center;
     justify-content: center;
   }
-  .section-main-cards .carousel-toggle #carousel-prev-toggle {
+  .section-main-cards .carousel-toggle .prev {
     cursor: pointer;
   }
-  .section-main-cards .carousel-toggle #carousel-next-toggle {
+  .section-main-cards .carousel-toggle .next {
     cursor: pointer;
   }
-  .section-main-cards .carousel-toggle #carousel-icons {
+  .section-main-cards .carousel-toggle .icons {
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
-  .section-main-cards .carousel-toggle #carousel-icons img {
+  .section-main-cards .carousel-toggle .icons img {
     margin-right: 2px;
     margin-left: 2px;
     opacity: 0.1;
+  }
+  .section-main-cards .carousel-toggle .icons img[data-active] {
+    opacity: 0.9;
+  }
+  .section-studies-content {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .section-studies-content .header {
+    font-family: "Neue Haas Grotesk Text", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    margin-bottom: 16px;
+  }
+  .section-studies-content .container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .section-studies-content .container .item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .section-studies-content .container .item-pic img {
+    max-width: 100%;
+  }
+  .section-studies-content .container .item-text {
+    font-family: "Neue Haas Grotesk Text", sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 24px;
+  }
+  .section-studies-content .container .item-text-case {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .section-studies-content .container .item-text-case a {
+    text-decoration: none;
+    color: #4D44C6;
+  }
+  .section-studies-content .container .item-text-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: #000000;
+    margin-top: 8px;
+  }
+  .section-studies-content .container .item-text-content {
+    color: #3D3D4E;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 16px;
+  }
+  .section-studies-content .container .item {
+    width: 18.5%;
   }
 }

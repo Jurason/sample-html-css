@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Case Studies</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="app.js" defer></script>
     <link href="http://fonts.cdnfonts.com/css/neue-haas-grotesk-text" rel="stylesheet">
 </head>
 <body>
@@ -36,10 +37,31 @@
                 <div class="section-main-cards-content-item-popup"></div>
             </div>
         </div>
-        <div class="carousel">
+        <div id="carousel" class="carousel" data-carousel>
             <div class="carousel-header">Case Studies</div>
-            <div class="carousel-item"><img id="carousel-current-image" src="./img/main-card-1.svg" alt=""></div>
-            <div class="carousel-toggle"><img id="carousel-prev-toggle" src="./img/arrow-carousel-prev.svg" alt="">&nbsp<div id="carousel-icons"></div>&nbsp<img id="carousel-next-toggle" src="./img/arrow-carousel-next.svg" alt=""></div>
+<!--            <div class="carousel-item"><img id="carousel-current-image" src="./img/main-card-1.svg" alt=""></div>-->
+            <div class="carousel-item" >
+                <ul data-slides>
+                    <li class="slide" data-active>
+                        <img id="carousel-current-image" src="./img/main-card-1.svg" alt="img-1">
+                    </li>
+                    <li class="slide">
+                        <img id="carousel-current-image" src="./img/main-card-2.svg" alt="img-2">
+                    </li>
+                    <li class="slide">
+                        <img id="carousel-current-image" src="./img/main-card-3.svg" alt="img-3">
+                    </li>
+                </ul>
+            </div>
+            <div class="carousel-toggle">
+                <img class="prev" data-carousel-button="prev" src="./img/arrow-carousel-prev.svg" alt="">&nbsp
+                <div class="icons" data-dots>
+                    <img data-active src="./img/circle-active.svg" alt="">
+                    <img src="./img/circle-active.svg" alt="">
+                    <img src="./img/circle-active.svg" alt="">
+                </div>&nbsp
+                <img class="next" data-carousel-button="next" src="./img/arrow-carousel-next.svg" alt="">
+            </div>
         </div>
     </section>
 <!--   / Main cards -->
@@ -124,8 +146,8 @@
                     </div>
                 </div>
                 <div class="carousel-toggle">
-                    <div class="carousel-toggle-prev"><div class="wrapper"><img class="circle" src="./img/Ellipse-32.svg" alt="toggle-1"><img class="arrow" src="./img/Union.svg" alt="arrow"></div></div>
-                    <div class="carousel-toggle-next"><div class="wrapper"><img class="circle" src="./img/Ellipse-32.svg" alt="toggle-2"><img class="arrow" src="./img/Union.svg" alt="arrow"></div></div>
+                    <div class="carousel-toggle-prev"><div class="wrapper"><img id="exp-prev" class="circle" src="./img/Ellipse-32.svg" alt="toggle-1"><img class="arrow" src="./img/Union.svg" alt="arrow"></div></div>
+                    <div class="carousel-toggle-next"><div class="wrapper"><img id="exp-next" class="circle" src="./img/Ellipse-32.svg" alt="toggle-2"><img class="arrow" src="./img/Union.svg" alt="arrow"></div></div>
                 </div>
             </div>
         </div>
@@ -363,49 +385,6 @@
 <!--   / Own case -->
 </body>
 <script>
-    const carouselContainer = document.getElementById('carousel-icons')
-    const CLASS_NAME_FOR_TOGGLE = 'tc-'
-    for (let i = 0; i < 3; i++) {
-        const image = document.createElement('img')
-        image.src = './img/circle-active.svg'
-        image.classList.add(`${CLASS_NAME_FOR_TOGGLE}${i}`)
-        carouselContainer.appendChild(image)
-    }
-    document.querySelector('.tc-0').style.opacity = 1
-    const arrayOfImageLinks = ['./img/main-card-1.svg', './img/main-card-2.svg', './img/main-card-3.svg']
-
-    const prev = document.getElementById('carousel-prev-toggle')
-    const next = document.getElementById('carousel-next-toggle')
-    const current = document.getElementById('carousel-current-image')
-    let currentCounter = 0
-    prev.addEventListener('click', () => {
-        if(!currentCounter){
-            return;
-        }
-        currentCounter--
-        current.src = arrayOfImageLinks[currentCounter]
-        setPrevActiveToggleCircle(currentCounter)
-    })
-    next.addEventListener('click', () => {
-        if(currentCounter === arrayOfImageLinks.length - 1){
-            return;
-        }
-        currentCounter++
-        current.src = arrayOfImageLinks[currentCounter]
-        setNextActiveToggleCircle(currentCounter)
-    })
-
-    function setNextActiveToggleCircle(idx){
-        document.querySelector(`.${CLASS_NAME_FOR_TOGGLE}${idx}`).style.opacity = 1
-        document.querySelector(`.${CLASS_NAME_FOR_TOGGLE}${idx - 1}`).style.opacity = .1
-    }
-    function setPrevActiveToggleCircle(idx){
-        document.querySelector(`.${CLASS_NAME_FOR_TOGGLE}${idx}`).style.opacity = 1
-        document.querySelector(`.${CLASS_NAME_FOR_TOGGLE}${idx + 1}`).style.opacity = .1
-    }
-
-
-
     // const x = window.matchMedia("(max-width: 700px)")
     //
     // function makeCarousel(x){
