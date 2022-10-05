@@ -441,11 +441,15 @@ template {
   height: 100%;
 }
 .section-explore-studies-content .main-title {
+  display: inline-block;
   color: #000000;
   font-weight: 500;
   font-size: 32px;
   line-height: 40px;
   text-align: right;
+}
+.section-explore-studies-content .main .mob-more-arrow {
+  display: none;
 }
 .section-explore-studies-content .main-button {
   margin-top: 32px;
@@ -905,6 +909,9 @@ template {
   font-size: 24px;
   line-height: 32px;
 }
+.section-own button {
+  display: none;
+}
 
 @media screen and (max-width: 320px) {
   .section-main-cards {
@@ -922,8 +929,8 @@ template {
   }
   .section-main-cards .carousel-header {
     font-weight: 500;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 30px;
+    line-height: 40px;
     color: #000000;
     margin-bottom: 16px;
     text-align: left;
@@ -973,31 +980,32 @@ template {
     align-items: center;
   }
   .section-main-cards .carousel-toggle .icons img {
-    margin-right: 2px;
-    margin-left: 2px;
+    margin-right: 6px;
+    margin-left: 6px;
     opacity: 0.1;
+    scale: 0.7;
   }
   .section-main-cards .carousel-toggle .icons img[data-active] {
     opacity: 0.9;
+    scale: 1;
+  }
+  .section-studies {
+    margin-bottom: 40px;
   }
   .section-studies-content {
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
+    width: 95%;
+    margin-right: 0;
   }
   .section-studies-content .header {
-    font-family: "Neue Haas Grotesk Text", sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 24px;
     line-height: 32px;
     color: #000000;
     margin-bottom: 16px;
   }
   .section-studies-content .container {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    gap: 32px;
+    overflow: scroll;
+    gap: 20px;
   }
   .section-studies-content .container .item {
     display: flex;
@@ -1005,7 +1013,7 @@ template {
     height: 100%;
   }
   .section-studies-content .container .item-pic img {
-    max-width: 100%;
+    width: 100%;
   }
   .section-studies-content .container .item-text {
     font-family: "Neue Haas Grotesk Text", sans-serif;
@@ -1025,8 +1033,8 @@ template {
   }
   .section-studies-content .container .item-text-title {
     font-weight: 700;
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 16px;
+    line-height: 24px;
     color: #000000;
     margin-top: 8px;
   }
@@ -1034,10 +1042,343 @@ template {
     color: #3D3D4E;
     font-weight: 400;
     font-size: 14px;
-    line-height: 24px;
+    line-height: 22px;
     margin-top: 16px;
   }
   .section-studies-content .container .item {
-    width: 18.5%;
+    min-width: 60%;
+  }
+  .section-explore-studies-content {
+    width: 95%;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 40px;
+    flex-direction: column;
+  }
+  .section-explore-studies-content .main {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .section-explore-studies-content .main-title {
+    text-align: left;
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    margin-bottom: 16px;
+  }
+  .section-explore-studies-content .main .mob-more-arrow {
+    display: inline;
+    vertical-align: text-top;
+    margin-left: 10px;
+  }
+  .section-explore-studies-content .main-button {
+    display: none;
+  }
+  .section-explore-studies-content .picture {
+    width: 95%;
+    height: 100%;
+  }
+  .section-explore-studies-content .picture img {
+    margin-top: 0;
+  }
+  .section-explore-studies-content .carousel {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    width: 100%;
+  }
+  .section-explore-studies-content .carousel-items {
+    display: flex;
+    gap: 20px;
+    overflow: scroll;
+  }
+  .section-explore-studies-content .carousel-items .item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .section-explore-studies-content .carousel-items .item-pic img {
+    width: 100%;
+  }
+  .section-explore-studies-content .carousel-items .item-text {
+    font-family: "Neue Haas Grotesk Text", sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 24px;
+  }
+  .section-explore-studies-content .carousel-items .item-text-case {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .section-explore-studies-content .carousel-items .item-text-case a {
+    text-decoration: none;
+    color: #4D44C6;
+  }
+  .section-explore-studies-content .carousel-items .item-text-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    margin-top: 8px;
+  }
+  .section-explore-studies-content .carousel-items .item-text-content {
+    color: #3D3D4E;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 16px;
+  }
+  .section-explore-studies-content .carousel-items .item {
+    min-width: 60%;
+  }
+  .section-explore-studies-content .carousel-toggle {
+    display: none;
+  }
+  .section-business {
+    position: relative;
+  }
+  .section-business-content {
+    width: 95%;
+    margin-right: 0;
+  }
+  .section-business-content .header {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    margin-bottom: 16px;
+  }
+  .section-business-content .container {
+    overflow: scroll;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .section-business-content .container .item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .section-business-content .container .item-pic img {
+    width: 100%;
+  }
+  .section-business-content .container .item-text {
+    font-family: "Neue Haas Grotesk Text", sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 24px;
+  }
+  .section-business-content .container .item-text-case {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .section-business-content .container .item-text-case a {
+    text-decoration: none;
+    color: #4D44C6;
+  }
+  .section-business-content .container .item-text-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    margin-top: 8px;
+  }
+  .section-business-content .container .item-text-content {
+    color: #3D3D4E;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 16px;
+  }
+  .section-business-content .container .item {
+    min-width: 85%;
+  }
+  .section-business .picture {
+    position: relative;
+    margin-top: 0;
+  }
+  .section-business .picture-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .section-business .picture-background img {
+    max-width: 250%;
+  }
+  .section-business .picture-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 17px;
+    margin: 40px auto 80px auto;
+  }
+  .section-business .picture-title {
+    font-family: "Neue Haas Grotesk Text", sans-serif;
+    margin-top: 60%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .section-business .picture-title br {
+    display: none;
+  }
+  .section-business .picture-text {
+    width: 80%;
+    padding: 0;
+    margin: auto;
+  }
+  .section-popular-content {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+  }
+  .section-popular-content .header {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    margin-bottom: 16px;
+  }
+  .section-popular-content .container {
+    flex-direction: column;
+  }
+  .section-popular-content .container .left {
+    margin-bottom: 40px;
+    gap: 16px;
+  }
+  .section-popular-content .container .left-item {
+    gap: 20px;
+    align-items: center;
+  }
+  .section-popular-content .container .left-item-text {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .section-popular-content .container .left-item-text-case {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .section-popular-content .container .left-item-text-case a {
+    text-decoration: none;
+    color: #4D44C6;
+  }
+  .section-popular-content .container .left-item-text-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    margin-top: 8px;
+  }
+  .section-popular-content .container .left-item-text-content {
+    display: none;
+  }
+  .section-popular hr.line {
+    display: none;
+  }
+  .section-category-content {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+  }
+  .section-category-content .header {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    margin-bottom: 16px;
+  }
+  .section-category-content .container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .section-category-content .container .item img {
+    max-width: 100%;
+  }
+  .section-own-content {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+  }
+  .section-own-content .header {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    margin-bottom: 16px;
+  }
+  .section-own-content .container-upper {
+    display: none;
+  }
+  .section-own-content .container-lower {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .section-own-content .container-lower .item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .section-own-content .container-lower .item-pic img {
+    width: 100%;
+  }
+  .section-own-content .container-lower .item-text {
+    font-family: "Neue Haas Grotesk Text", sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 24px;
+  }
+  .section-own-content .container-lower .item-text-case {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .section-own-content .container-lower .item-text-case a {
+    text-decoration: none;
+    color: #4D44C6;
+  }
+  .section-own-content .container-lower .item-text-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    margin-top: 8px;
+  }
+  .section-own-content .container-lower .item-text-content {
+    color: #3D3D4E;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 16px;
+  }
+  .section-own-content .container-lower .item-text-title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .section-own button {
+    font-family: "Neue Haas Grotesk Text", sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #F3F3F4;
   }
 }

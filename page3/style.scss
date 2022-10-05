@@ -165,11 +165,15 @@ $width: 90%;
       height: 100%;
 
       &-title {
+        display: inline-block;
         color: $color-black;
         font-weight: 500;
         font-size: 32px;
         line-height: 40px;
         text-align: right;
+      }
+      .mob-more-arrow {
+        display: none;
       }
 
       &-button {
@@ -513,17 +517,75 @@ $width: 90%;
       }
     }
   }
+  button {
+    display: none;
+  }
 }
 
 @mixin mob-title {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 24px;
   line-height: 32px;
   color: $color-black;
   margin-bottom: 16px;
 }
 
+@mixin mob-link-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  a {
+    text-decoration: none;
+    color: $color-links;
+  }
+}
+@mixin mob-subtitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: $color-black;
+  margin-top: 8px;
+}
+@mixin mob-text-content {
+  color: $color-content;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 16px;
+}
+
+@mixin mob-card {
+  .item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    &-pic {
+      img {
+        width: 100%;
+      }
+    }
+    &-text {
+      @include font-haas;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 24px;
+      &-case {
+        @include mob-link-text;
+      }
+      &-title {
+        @include mob-subtitle;
+      }
+      &-content {
+        @include mob-text-content;
+      }
+    }
+  }
+}
+
+
 @media screen and (max-width: 320px) {
+
   // ==== Section-main-cards ==== //
   .section-main-cards {
     width: 100%;
@@ -537,7 +599,11 @@ $width: 90%;
       width: 90%;
       margin: auto;
       &-header {
-        @include mob-title;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 40px;
+        color: $color-black;
+        margin-bottom: 16px;
         text-align: left;
         margin-top: 56px;
       }
@@ -584,37 +650,251 @@ $width: 90%;
           align-items: center;
           //justify-content: space-between;
           img {
-            margin-right: 2px;
-            margin-left: 2px;
+            margin-right: 6px;
+            margin-left: 6px;
             opacity: .1;
+            scale: 0.7;
           }
           img[data-active] {
             opacity: .9;
+            scale: 1;
           }
         }
 
       }
     }
   }
+
   // ==== Section-studies ==== //
   .section-studies {
+    margin-bottom: 40px;
     &-content {
-      @include horizontal-align;
+      width: 95%;
+      margin-right: 0;
       .header {
-        @include font-haas;
         @include mob-title
       }
       .container {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        gap: 32px;
-        @include card;
+        overflow: scroll;
+        gap: 20px;
+        @include mob-card;
         .item {
-          width: 18.5%;
+          min-width: 60%;
         }
       }
     }
   }
 
+  // ==== Section-explore ==== //
+  .section-explore-studies {
+    &-content {
+      width: 95%;
+      margin-right: 0;
+      margin-top: 0;
+      margin-bottom: 40px;
+      flex-direction: column;
+      .main {
+        display: block;
+        width: 100%;
+        height: 100%;
+        &-title {
+          text-align: left;
+          margin-bottom: 16px;
+          @include mob-title
+        }
+        .mob-more-arrow {
+          display: inline;
+          vertical-align: text-top;
+          margin-left: 10px;
+        }
+        &-button {
+          display: none;
+        }
+      }
+      .picture {
+        width: 95%;
+        height: 100%;
+
+        img {
+          margin-top: 0;
+        }
+      }
+      .carousel {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        width: 100%;
+        &-items {
+          display: flex;
+          gap: 20px;
+          overflow: scroll;
+          @include mob-card;
+          .item {
+            min-width: 60%;
+          }
+        }
+        &-toggle {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // ==== Section-business ==== //
+  .section-business {
+    position: relative;
+    &-content {
+      width: 95%;
+      margin-right: 0;
+      .header {
+        @include mob-title;
+      }
+      .container {
+        overflow: scroll;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        @include mob-card;
+
+        .item {
+          min-width: 85%;
+        }
+      }
+    }
+    .picture {
+      position: relative;
+      margin-top: 0;
+      &-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        img {
+          max-width: 250%;
+        }
+      }
+      &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 17px;
+        margin: 40px auto 80px auto;
+      }
+      &-title {
+        @include font-haas;
+        margin-top: 60%;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 24px;
+        line-height: 32px;
+        br {
+          display: none;
+        }
+      }
+      &-text {
+        width: 80%;
+        padding: 0;
+        margin: auto;
+      }
+    }
+  }
+
+  // ==== Section-popular ==== //
+  .section-popular {
+    &-content {
+      @include horizontal-align;
+      margin-bottom: 40px;
+      .header {
+        @include mob-title
+      }
+      .container {
+        flex-direction: column;
+        .left {
+          margin-bottom: 40px;
+          gap: 16px;
+          &-item {
+            gap: 20px;
+            align-items: center;
+            &-text {
+              margin-top: 0;
+              margin-bottom: 0;
+              &-case {
+                @include mob-link-text;
+              }
+              &-title {
+                @include mob-subtitle;
+              }
+              &-content {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    hr.line {
+      display: none;
+    }
+  }
+
+  // ==== Section-category ==== //
+  .section-category {
+    &-content {
+      @include horizontal-align;
+      margin-bottom: 40px;
+      .header {
+        @include mob-title;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        .item {
+
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  // ==== Section-own ==== //
+  .section-own {
+    &-content {
+      @include horizontal-align;
+      margin-bottom: 40px;
+      .header {
+        @include mob-title
+      }
+      .container-upper {
+        display: none;
+      }
+      .container-lower {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        @include mob-card;
+        .item {
+          &-text {
+            &-title {
+              font-size: 20px;
+              line-height: 26px;
+            }
+          }
+        }
+      }
+    }
+    button {
+      @include font-haas;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 70px;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #F3F3F4;
+    }
+  }
 }
