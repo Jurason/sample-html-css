@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/gotham-pro" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="option-panel">
+        <div class="option-panel__logo logo"><img src="/images/page7/stylopay_logo.svg" alt="">StyloPay</div>
+        <div class="option-panel__options">
+            <div class="option-panel__item">
+                <div class="option-panel__item__pic">
+                    <img src="/images/page7/menu_Icon_Global%20Accounts%20Wallet.svg" alt="">
+                </div>
+                <div class="option-panel__item__name">Global Accounts Wallet</div>
+            </div>
+            <div class="option-panel__item">
+                <div class="option-panel__item__pic">
+                    <img style="top: calc(50% - 10px)" src="/images/page7/menu_Icon_Cards%20BW.svg" alt="">
+                </div>
+                <div class="option-panel__item__name">Cards</div>
+            </div>
+            <div class="option-panel__item">
+                <div class="option-panel__item__pic">
+                    <img src="/images/page7/Group%2032.svg" alt="">
+                </div>
+                <div class="option-panel__item__name">Crypto Account</div>
+            </div>
+            <div class="option-panel__item">
+                <div class="option-panel__item__pic">
+                    <img style="top: calc(50% - 11px); left: calc(50% - 15px)" src="/images/page7/menu_Icon_Transfers.svg" alt="">
+                </div>
+                <div class="option-panel__item__name">Transfers</div>
+            </div>
+            <div class="option-panel__item">
+                <div class="option-panel__item__pic">
+                    <img style="top: calc(50% - 11px); left: calc(50% - 12px)" src="/images/page7/menu_Icon_Conversions.svg" alt="">
+                </div>
+                <div class="option-panel__item__name">Conversations</div>
+            </div>
+            <div class="option-panel__item">
+                <div class="option-panel__item__pic">
+                    <img style="left: calc(50% - 10px)" src="/images/page7/menu_Icon_Transactions.svg" alt="">
+                </div>
+                <div class="option-panel__item__name">Transactions</div>
+            </div>
+            <div class="option-panel__item">
+                <div class="option-panel__item__pic">
+                    <img style="left: calc(50% - 10px)" src="/images/page7/menu_Icon_Rewards.svg" alt="">
+                </div>
+                <div class="option-panel__item__name">Rewards</div>
+            </div>
+            <div class="option-panel__item">
+                <div class="option-panel__item__pic">
+                    <img style="top: calc(50% - 11px)" src="/images/page7/menu_Icon_Recipients.svg" alt="">
+                </div>
+                <div class="option-panel__item__name">Recipients</div>
+            </div>
+            <div class="option-panel__item">
+                <div class="option-panel__item__pic">
+                    <img src="/images/page7/menu_Icon_Settings%20BW.svg" alt="">
+                </div>
+                <div class="option-panel__item__name">Settings</div>
+            </div>
+        </div>
+        <div class="option-panel__sign sign">© StyloPay Ltd.</div>
+    </div>
+    <div class="dashboard">
+        <div class="dashboard__header">
+            <div class="dashboard__header__title">
+                <div class="dashboard__header__title__left">Crypto Account</div>
+                <div class="dashboard__header__title__right">
+                    <div class="account-name">
+                        <div class="account-name__fullname">{{'FullName'}}</div>
+                        <div class="account-name__login">{{'Login'}}</div>
+                    </div>
+                    <div class="account-dropdown"><img src="/images/page7/avatar@2x.svg" alt=""><div class="arrow"><img src="/images/page7/arrow_r_black.svg" alt=""></div></div>
+                    <div class="notification-dropdown"><img src="/images/page7/Bell.svg" alt=""><img class="circle" src="/images/page7/Oval.svg" alt=""></div>
+                </div>
+            </div>
+            <div class="dashboard__header__control-panel control-panel">
+                <div class="control-panel__general-info">
+                    <div class="control-panel__general-info__balance">{{ 'WALLET BALANCE' }}</div>
+                    <div class="control-panel__general-info__text">
+                        Your total balance estimate in
+                        <div class="control-panel__general-info__dropdown currency-dropdown">
+                            <div class="currency-dropdown__inner">
+                                <div class="currency-dropdown__inner__pic"><img src="/images/page7/btc.svg" alt=""></div>
+                                <div class="currency-dropdown__inner__title">BTC</div>
+                                <div class="currency-dropdown__inner__arrow"><img src="/images/page7/arrow_r_black.svg" alt=""></div>
+                            </div>
+                        </div>
+                        at {{ 'Data.now()' }}
+                    </div>
+                </div>
+                <div class="control-panel__right-block">
+                    <div class="control-panel__right-block__add"><img src="/images/page7/Button(1).svg" alt=""></div>
+                    <div class="control-panel__right-block__update"><img src="/images/page7/Button.svg" alt=""></div>
+                    <div class="control-panel__right-block__transfer"><img src="/images/page7/Button(2).svg" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard__balance">
+            <div class="dashboard__balance__header">
+                <div class="dashboard__balance__header__text">Account Balance</div>
+                <div class="dashboard__balance__header__view-control view-control">
+                    <div class="view-control__option row option-active"><img src="/images/page7/List.svg" alt=""></div>
+                    <div class="view-control__option table"><img src="/images/page7/Cards.svg" alt=""></div>
+                </div>
+            </div>
+            <div class="dashboard__balance__currency-wrapper">
+                <div class="currency-item">
+                    <div class="currency-item__title"><img src="/images/page7/btc.svg" alt="">{{'Title'}}</div>
+                    <div class="currency-item__status">{{'Status'}}</div>
+                    <div class="currency-item__balance">{{ 'Balance' }}</div>
+                    <div class="currency-item__dropdown"><img src="/images/page7/Plus.svg" alt=""></div>
+                </div>
+                <div class="currency-item">
+                    <div class="currency-item__title"><img src="/images/page7/eth.svg" alt="">{{'Title'}}</div>
+                    <div class="currency-item__status">{{'Status'}}</div>
+                    <div class="currency-item__balance">{{ 'Balance' }}</div>
+                    <div class="currency-item__dropdown"><img src="/images/page7/Plus.svg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="currency-dropdown__open">
+    <div class="dropdown-item">
+        <div class="dropdown-item__pic">
+            <img src="/images/page7/eth.svg" alt="">
+        </div>
+        <div class="dropdown-item__title">
+            ETH
+        </div>
+    </div>
+    <div class="dropdown-item">
+        <div class="dropdown-item__pic">
+            <img src="/images/page7/bnb.svg" alt="">
+        </div>
+        <div class="dropdown-item__title">
+            BNB
+        </div>
+    </div>
+</div>
+</body>
+</html>

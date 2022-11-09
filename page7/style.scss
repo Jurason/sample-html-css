@@ -1,0 +1,384 @@
+$background-color-main: #1A1B26;
+$background-color-second: #232534;
+$background-color-third: linear-gradient(268.3deg, #3C4ECE 2.15%, #4B61F9 100.76%);
+$background-color-forth: #2F3246;
+$background-color-fifth: #242635;
+$font-color-1: #585C76;
+$font-color-2: #ACAEC8;
+$color-white: #fff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Gotham Pro;
+}
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: $background-color-main;
+  display: flex;
+}
+
+.option-panel {
+  min-width: 300px;
+  padding-left: 40px;
+
+}
+
+.option-panel__logo {
+  padding-top: 30px;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: $color-white;
+}
+
+.option-panel__options {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.option-panel__item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: $font-color-1;
+}
+
+.option-panel__item__pic {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: $background-color-second;
+  border-radius: 10px;
+}
+.option-panel__item__pic img{
+  position: absolute;
+  display: block;
+  top: calc(50% - 13px);
+  left: calc(50% - 13px);
+}
+
+.option-panel__item__name {
+
+}
+.option-panel__sign {
+  margin-bottom: 20px;
+}
+
+.sign {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: $font-color-2;
+}
+
+.dashboard {
+  background-color: $background-color-second;
+  width: 100%;
+  border-radius: 30px 0 0 30px;
+}
+
+.dashboard__header {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 25px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dashboard__header__title {
+  display: flex;
+  justify-content: space-between;
+  color: $color-white;
+}
+
+.dashboard__header__title__left {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: left;
+}
+
+.dashboard__header__title__right {
+  display: flex;
+  gap: 15px;
+
+}
+
+.account-name {
+  text-align: right;
+}
+
+.account-name__fullname {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.account-name__login {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.account-dropdown {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.account-dropdown img{
+  position: absolute;
+}
+.account-dropdown .arrow {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  top: calc(50% - 8px);
+  left: calc(50% + 13px);
+  background-color: $background-color-second;
+}
+.arrow img {
+  position: absolute;
+  width: 8px;
+  height: 6px;
+  top: calc(50% - 3px);
+  left: calc(50% - 5px);
+  z-index: 101;
+}
+
+.notification-dropdown {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: $background-color-forth;
+}
+.notification-dropdown img {
+  position: absolute;
+  top: calc(50% - 13px);
+  left: calc(50% - 11px);
+}
+.notification-dropdown .circle {
+  border: 2px solid $background-color-second;
+  border-radius: 50%;
+  top: 14px;
+  left: -6px;
+}
+
+.dashboard__header__control-panel {
+}
+
+.control-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  background: $background-color-third;
+  color: $color-white;
+}
+
+.control-panel__general-info {
+  padding: 30px;
+}
+
+.control-panel__general-info__balance {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.control-panel__general-info__text {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+}
+
+.control-panel__general-info__dropdown {
+  display: inline-block;
+  vertical-align: middle;
+  width: 82px;
+  height: 30px;
+  border-radius: 5px;
+  background: $background-color-second;
+}
+.currency-dropdown {
+
+}
+.currency-dropdown__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px;
+}
+.currency-dropdown__inner__pic {
+  width: 20px;
+  height: 20px;
+}
+.currency-dropdown__inner__title {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.currency-dropdown__inner__arrow {
+  display: flex;
+  align-items: center;
+}
+.currency-dropdown__open {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-start;
+  width: 82px;
+  background-color: $background-color-fifth;
+  border-radius: 5px;
+  color: $color-white;
+}
+.dropdown-item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0 5px 5px;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.dropdown-item__pic {
+  width: 20px;
+  height: 20px;
+}
+.dropdown-item__title {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+
+
+.control-panel__right-block {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 35px;
+}
+
+.control-panel__right-block__add {
+}
+
+.control-panel__right-block__update {
+}
+
+.control-panel__right-block__transfer {
+}
+
+.dashboard__balance {
+  width: 90%;
+  margin: 35px auto 0 auto;
+  color: $color-white;
+}
+
+.dashboard__balance__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.dashboard__balance__header__text {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+}
+
+.dashboard__balance__header__view-control {
+}
+
+.view-control {
+  display: flex;
+  gap: 5px;
+}
+
+.view-control__option {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid $background-color-forth;
+}
+.view-control__option img {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
+  opacity: .2;
+}
+.option-active {
+  background-color: $background-color-forth;
+}
+.option-active img {
+  opacity: 1;
+}
+.dashboard__balance__currency-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.currency-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: $background-color-forth;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+}
+
+.currency-item__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.currency-item__status {
+}
+
+.currency-item__balance {
+}
+
+.currency-item__dropdown {
+  display: flex;
+  align-items: center;
+}
