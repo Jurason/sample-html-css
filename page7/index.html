@@ -78,7 +78,7 @@
                         <div class="account-name__login">{{'Login'}}</div>
                     </div>
                     <div class="account-dropdown"><img src="/images/page7/avatar@2x.svg" alt=""><div class="arrow"><img src="/images/page7/arrow_r_black.svg" alt=""></div></div>
-                    <div class="notification-dropdown"><img src="/images/page7/Bell.svg" alt=""><img class="circle" src="/images/page7/Oval.svg" alt=""></div>
+                    <div class="notification-dropdown"><img class="bell" src="/images/page7/Bell.svg" alt=""><img class="circle" src="/images/page7/Oval.svg" alt=""></div>
                 </div>
             </div>
             <div class="dashboard__header__control-panel control-panel">
@@ -92,14 +92,32 @@
                                 <div class="currency-dropdown__inner__title">BTC</div>
                                 <div class="currency-dropdown__inner__arrow"><img src="/images/page7/arrow_r_black.svg" alt=""></div>
                             </div>
+                            <div class="currency-dropdown__content">
+                                <div class="currency-dropdown__item">
+                                    <div class="currency-dropdown__item__pic">
+                                        <img src="/images/page7/eth.svg" alt="">
+                                    </div>
+                                    <div class="currency-dropdown__item__title">
+                                        ETH
+                                    </div>
+                                </div>
+                                <div class="currency-dropdown__item">
+                                    <div class="currency-dropdown__item__pic">
+                                        <img src="/images/page7/bnb.svg" alt="">
+                                    </div>
+                                    <div class="currency-dropdown__item__title">
+                                        BNB
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         at {{ 'Data.now()' }}
                     </div>
                 </div>
                 <div class="control-panel__right-block">
-                    <div class="control-panel__right-block__add"><img src="/images/page7/Button(1).svg" alt=""></div>
-                    <div class="control-panel__right-block__update"><img src="/images/page7/Button.svg" alt=""></div>
-                    <div class="control-panel__right-block__transfer"><img src="/images/page7/Button(2).svg" alt=""></div>
+                    <div class="control-panel__right-block__add"><img src="/images/page7/Plus.svg" alt=""></div>
+                    <div class="control-panel__right-block__update"><img src="/images/page7/Convert.svg" alt=""></div>
+                    <div class="control-panel__right-block__transfer"><span>SEND MONEY</span><img src="/images/page7/Send.svg" alt=""></div>
                 </div>
             </div>
         </div>
@@ -113,36 +131,42 @@
             </div>
             <div class="dashboard__balance__currency-wrapper">
                 <div class="currency-item">
-                    <div class="currency-item__title"><img src="/images/page7/btc.svg" alt="">{{'Title'}}</div>
-                    <div class="currency-item__status">{{'Status'}}</div>
-                    <div class="currency-item__balance">{{ 'Balance' }}</div>
-                    <div class="currency-item__dropdown"><img src="/images/page7/Plus.svg" alt=""></div>
+                    <div class="currency-item__header">
+                        <img class="currency-item__pic" src="/images/page7/btc.svg" alt="">
+                        <div class="currency-item__title">{{'Title'}}</div>
+                        <div class="currency-item__status">{{'Status'}}</div>
+                        <div class="currency-item__balance">{{ 'Balance' }}</div>
+                        <div class="currency-item__dropdown"><img src="/images/page7/Plus_blue.svg" alt=""></div>
+                    </div>
+                    <div class="currency-item__bottom">
+                        <div></div>
+                        <div class="currency-item__title">{{'999SG8379SD03AS8}}
+                            <img src="/images/page7/copy%20icon%202.svg" alt="">
+                            <img src="/images/page7/qr%20icon.svg" alt="">
+                        </div>
+                        <div class="currency-item__status">{{'Status'}}</div>
+                        <div class="currency-item__balance">{{ 'Balance' }}</div>
+                    </div>
                 </div>
                 <div class="currency-item">
-                    <div class="currency-item__title"><img src="/images/page7/eth.svg" alt="">{{'Title'}}</div>
-                    <div class="currency-item__status">{{'Status'}}</div>
-                    <div class="currency-item__balance">{{ 'Balance' }}</div>
-                    <div class="currency-item__dropdown"><img src="/images/page7/Plus.svg" alt=""></div>
+                    <div class="currency-item__header">
+                        <img class="currency-item__pic" src="/images/page7/eth.svg" alt="">
+                        <div class="currency-item__title">{{'Title'}}</div>
+                        <div class="currency-item__status">{{'Status'}}</div>
+                        <div class="currency-item__balance">{{ 'Balance' }}</div>
+                        <div class="currency-item__dropdown"><img src="/images/page7/Plus_blue.svg" alt=""></div>
+                    </div>
+                    <div class="currency-item__bottom">
+                        <div></div>
+                        <div class="currency-item__title">{{'999SG8379SD03AS8}}
+                            <img src="/images/page7/copy%20icon%202.svg" alt="">
+                            <img src="/images/page7/qr%20icon.svg" alt="">
+                        </div>
+                        <div class="currency-item__status">{{'Status'}}</div>
+                        <div class="currency-item__balance">{{ 'Balance' }}</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="currency-dropdown__open">
-    <div class="dropdown-item">
-        <div class="dropdown-item__pic">
-            <img src="/images/page7/eth.svg" alt="">
-        </div>
-        <div class="dropdown-item__title">
-            ETH
-        </div>
-    </div>
-    <div class="dropdown-item">
-        <div class="dropdown-item__pic">
-            <img src="/images/page7/bnb.svg" alt="">
-        </div>
-        <div class="dropdown-item__title">
-            BNB
         </div>
     </div>
 </div>

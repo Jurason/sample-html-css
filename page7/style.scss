@@ -6,6 +6,7 @@ $background-color-fifth: #242635;
 $font-color-1: #585C76;
 $font-color-2: #ACAEC8;
 $color-white: #fff;
+$color-line: #2F3248;
 * {
   margin: 0;
   padding: 0;
@@ -174,6 +175,29 @@ img {
   height: 40px;
   border-radius: 10px;
   background-color: $background-color-forth;
+  cursor: pointer;
+}
+.notification-dropdown .circle {
+  animation: .5s infinite alternate notification;
+}
+.notification-dropdown .bell:hover {
+  animation: .3s 9 alternate bell;
+}
+@keyframes notification {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.1;
+  }
+}
+@keyframes bell {
+  from {
+    transform: rotate(15deg);
+  }
+  to {
+    transform: rotate(-15deg)
+  }
 }
 .notification-dropdown img {
   position: absolute;
@@ -221,18 +245,22 @@ img {
 .control-panel__general-info__dropdown {
   display: inline-block;
   vertical-align: middle;
+}
+.currency-dropdown {
   width: 82px;
   height: 30px;
   border-radius: 5px;
   background: $background-color-second;
+  cursor: pointer;
 }
-.currency-dropdown {
-
+.currency-dropdown:hover {
+  border-bottom: 2px solid $color-line;
+  border-radius: 5px 5px 0 0;
 }
 .currency-dropdown__inner {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 5px;
   padding: 5px;
 }
@@ -249,18 +277,27 @@ img {
   display: flex;
   align-items: center;
 }
-.currency-dropdown__open {
+.currency-dropdown:hover .currency-dropdown__content {
+  opacity: 1;
+}
+.currency-dropdown__item:hover {
+  background-color: $background-color-forth;
+}
+.currency-dropdown__content {
   position: absolute;
   display: flex;
+  opacity: 0;
   flex-direction: column;
   gap: 5px;
   justify-content: flex-start;
   width: 82px;
   background-color: $background-color-fifth;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
   color: $color-white;
+  transition: opacity .2s ease-out;
+  overflow: hidden;
 }
-.dropdown-item {
+.currency-dropdown__item {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -268,17 +305,15 @@ img {
   justify-content: flex-start;
   gap: 5px;
 }
-.dropdown-item__pic {
+.currency-dropdown__item__pic {
   width: 20px;
   height: 20px;
 }
-.dropdown-item__title {
+.currency-dropdown__item__title {
   font-size: 12px;
   font-weight: 700;
   line-height: 20px;
 }
-
-
 
 .control-panel__right-block {
   display: flex;
@@ -286,14 +321,34 @@ img {
   gap: 5px;
   padding: 35px;
 }
-
-.control-panel__right-block__add {
-}
-
-.control-panel__right-block__update {
-}
-
+.control-panel__right-block__add,
+.control-panel__right-block__update,
 .control-panel__right-block__transfer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: $background-color-second;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+.control-panel__right-block__transfer {
+  width: 190px;
+}
+.control-panel__right-block__transfer span {
+  margin-right: 17px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.control-panel__right-block__add:hover,
+.control-panel__right-block__update:hover,
+.control-panel__right-block__transfer:hover {
+  scale: 1.025;
 }
 
 .dashboard__balance {
@@ -331,12 +386,18 @@ img {
   height: 50px;
   border-radius: 10px;
   border: 2px solid $background-color-forth;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+.view-control__option:hover {
+  background-color: $background-color-forth;
 }
 .view-control__option img {
   position: absolute;
   top: calc(50% - 10px);
   left: calc(50% - 10px);
   opacity: .2;
+  transition: opacity .2s ease;
 }
 .option-active {
   background-color: $background-color-forth;
@@ -351,34 +412,64 @@ img {
   gap: 10px;
   justify-content: flex-start;
 }
-
 .currency-item {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 1fr;
+  row-gap: 10px;
   background-color: $background-color-forth;
+  padding: 10px 20px;
+  border-radius: 10px;
   font-size: 15px;
   font-weight: 400;
   line-height: 20px;
-  text-align: left;
+  transition: all 1s ease;
+  cursor: pointer;
 }
-
+.currency-item__header {
+  display: grid;
+  grid-template-columns: 30px 2fr 2fr 2fr 1fr;
+  align-items: center;
+}
+.currency-item__bottom {
+  display: none;
+  grid-template-columns: 30px 2fr 2fr 2fr 1fr;
+  align-items: center;
+  transition: opacity 1s ease-in-out;
+}
+.currency-item:hover {
+  grid-template-rows: 1fr 1fr;
+  height: 80px;
+  background-color: $background-color-second;
+}
+.currency-item:hover .currency-item__bottom {
+  display: grid;
+}
+.currency-item:hover .currency-item__dropdown img {
+  opacity: 0;
+}
 .currency-item__title {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
+  margin-left: 10px;
+}
+.currency-item__title img{
+  cursor: pointer;
 }
 
 .currency-item__status {
+  text-align: left;
 }
 
 .currency-item__balance {
+  text-align: left;
 }
 
 .currency-item__dropdown {
-  display: flex;
-  align-items: center;
+  text-align: right;
+
+}
+.currency-item__dropdown img {
+  transition: opacity .3s ease-in-out;
 }
