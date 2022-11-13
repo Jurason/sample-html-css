@@ -416,7 +416,7 @@ img {
 
 .dashboard__balance__currency-wrapper {
   width: 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 10px;
   justify-content: flex-start;
@@ -438,13 +438,13 @@ img {
 
 .currency-item__header {
   display: grid;
-  grid-template-columns: 30px 2fr 2fr 2fr 1fr;
+  grid-template-columns: 30px 3fr 2fr 2fr 1fr;
   align-items: center;
 }
 
 .currency-item__bottom {
   display: none;
-  grid-template-columns: 30px 2fr 2fr 2fr 1fr;
+  grid-template-columns: 30px 3fr 2fr 2fr 1fr;
   align-items: center;
   transition: opacity 1s ease-in-out;
 }
@@ -489,6 +489,51 @@ img {
 
 .currency-item__dropdown img {
   transition: opacity 0.3s ease-in-out;
+}
+
+.table-view {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.table-view .currency-item {
+  position: relative;
+  display: flex;
+  width: calc(33% - 20px);
+  height: 165px;
+  padding: 20px;
+}
+.table-view .currency-item .currency-item__header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+.table-view .currency-item .currency-item__header .currency-item__dropdown {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.table-view .currency-item .currency-item__header .currency-item__status {
+  display: none;
+}
+.table-view .currency-item:hover {
+  background-color: #2F3246;
+  border-radius: 10px 10px 0 0;
+}
+.table-view .currency-item:hover .currency-item__bottom {
+  position: absolute;
+  width: 100%;
+  top: 95%;
+  left: 0;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 10px 10px;
+  padding: 20px;
+  background-color: #2F3246;
+  box-shadow: 0 5px 8px #232534;
 }
 
 /*# sourceMappingURL=style.css.map */
