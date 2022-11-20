@@ -414,9 +414,9 @@ img {
   opacity: 1;
 }
 
-.dashboard__balance__currency-wrapper {
+.row-view {
   width: 100%;
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 10px;
   justify-content: flex-start;
@@ -534,6 +534,10 @@ img {
   padding: 20px;
   background-color: #2F3246;
   box-shadow: 0 5px 8px #232534;
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
