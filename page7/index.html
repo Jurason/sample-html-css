@@ -77,7 +77,20 @@
                         <div class="account-name__fullname">{{'FullName'}}</div>
                         <div class="account-name__login">{{'Login'}}</div>
                     </div>
-                    <div class="account-dropdown"><img src="/images/page7/avatar@2x.svg" alt=""><div class="arrow"><img src="/images/page7/arrow_r_black.svg" alt=""></div></div>
+                    <div class="account-dropdown">
+                        <img src="/images/page7/avatar@2x.svg" alt="">
+                        <div class="arrow">
+                            <img src="/images/page7/arrow_r_black.svg" alt="">
+                        </div>
+                        <div class="account-dropdown__content">
+                            <div class="account-dropdown__content__item">Profile</div>
+                            <div class="account-dropdown__content__item">Account Details</div>
+                            <div class="account-dropdown__content__item">
+                                <img src="/images/page7/logout-icon.svg" alt="">
+                                Log Out
+                            </div>
+                        </div>
+                    </div>
                     <div class="notification-dropdown"><img class="bell" src="/images/page7/Bell.svg" alt=""><img class="circle" src="/images/page7/Oval.svg" alt=""></div>
                 </div>
             </div>
@@ -265,7 +278,70 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="account-info">
+            <div class="account-info__header">
+                <div class="account-info__header__tab personal-info tab-active">Personal info</div>
+                <div class="account-info__header__tab address-info">Address info</div>
+                <hr>
+            </div>
+            <div class="account-info__container">
+                <div class="account-info__content">
+                    <div class="account-info__content__item item">
+                        <div class="item__header">First name</div>
+                        <div class="item__input">
+                            <input placeholder="Abram" type="text">
+                            <hr class="input-validation">
+                        </div>
+                        <div class="validation-tooltip">You cannot use numbers in this field</div>
+                    </div>
 
+                    <div class="account-info__content__item item">
+                        <div class="item__header">Middle name</div>
+                        <div class="item__input">
+                            <input placeholder="Something" type="text">
+                            <hr class="input-validation">
+                        </div>
+                        <div class="validation-tooltip">You cannot use numbers in this field</div>
+                    </div>
+                    <div class="account-info__content__item item">
+                        <div class="item__header">Last name</div>
+                        <div class="item__input">
+                            <input placeholder="Davingen" type="text">
+                            <hr class="input-validation">
+                        </div>
+                        <div class="validation-tooltip">You cannot use numbers in this field</div>
+                    </div>
+                    <div class="account-info__content__item item">
+                        <div class="item__header">Date of birth</div>
+                        <div class="item__input">
+                            <input placeholder="1999-12-30" type="text">
+                            <hr class="input-validation">
+                        </div>
+                        <div class="validation-tooltip">You cannot use numbers in this field</div>
+                    </div>
+                    <div class="account-info__content__item item">
+                        <div class="item__header">Email</div>
+                        <div class="item__input">
+                            <input placeholder="youremail@email.com" type="text">
+                            <hr class="input-validation">
+                        </div>
+                        <div class="validation-tooltip">You cannot use numbers in this field</div>
+                    </div>
+                    <div class="account-info__content__item item">
+                        <div class="item__header">Phone number</div>
+                        <div class="item__input">
+                            <input placeholder="+921 239 123 231" type="text">
+                            <hr class="input-validation">
+                        </div>
+                        <div class="validation-tooltip">You cannot use numbers in this field</div>
+                    </div>
+
+                </div>
+                <div class="account-info__footer">
+                    <button class="big-button">SAVE CHANGES</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

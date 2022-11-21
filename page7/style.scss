@@ -3,8 +3,10 @@ $background-color-second: #232534;
 $background-color-third: linear-gradient(268.3deg, #3C4ECE 2.15%, #4B61F9 100.76%);
 $background-color-forth: #2F3246;
 $background-color-fifth: #242635;
+$background-color-six: #64D37D;
 $font-color-1: #585C76;
 $font-color-2: #ACAEC8;
+$font-color-3: #EC440F;
 $color-white: #fff;
 $color-line: #2F3248;
 * {
@@ -159,6 +161,7 @@ img {
   top: calc(50% - 8px);
   left: calc(50% + 13px);
   background-color: $background-color-second;
+  z-index: 101;
 }
 .arrow img {
   position: absolute;
@@ -167,6 +170,40 @@ img {
   top: calc(50% - 3px);
   left: calc(50% - 5px);
   z-index: 101;
+  transition: all .3s ease-in-out;
+}
+.account-dropdown__content {
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  width: 154px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 50px 50px rgba(50, 70, 211, 0.05);
+  border-radius: 10px;
+  z-index: 100;
+  background-color: $background-color-forth;
+  cursor: pointer;
+  overflow: hidden;
+  &__item {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    img {
+      position: relative;
+      margin-right: 6px;
+    }
+  }
+  &__item:hover {
+    background-color: #393E5C;
+  }
+}
+.account-dropdown:hover .account-dropdown__content {
+  display: flex;
+}
+.account-dropdown:hover .arrow img {
+  transform: rotate(180deg);
 }
 
 .notification-dropdown {
@@ -352,6 +389,7 @@ img {
 }
 
 .dashboard__balance {
+  display: none;
   width: 90%;
   margin: 35px auto 0 auto;
   color: $color-white;
@@ -520,4 +558,134 @@ img {
 }
 .hidden {
   display: none;
+}
+
+.account-info {
+  width: 90%;
+  margin: 35px auto 0 auto;
+  color: $color-white;
+  &__header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 35px;
+    z-index: 101;
+    hr {
+      position: absolute;
+      width: 100%;
+      top: 95%;
+      height: 2px;
+      background-color: $background-color-forth;
+      border: none;
+      z-index: 100;
+    }
+    &__tab {
+      margin-right: 50px;
+      cursor: pointer;
+      color: $font-color-1;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: 0;
+      text-align: left;
+      transition: color .3s ease-in-out;
+      border-bottom: 4px solid $background-color-second;
+      z-index: 99;
+    }
+  }
+  &__container {
+    padding: 30px;
+    border-radius: 15px;
+    background-color: $background-color-forth;
+  }
+  &__content {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      .item__header {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+        color: #ACAEC8;
+      }
+      .item__input {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        input {
+          width: 100%;
+          height: 50px;
+          padding: 15px;
+          border: none;
+          background-color: $background-color-second;
+          outline: none;
+          color: $color-white;
+        }
+        .input-validation {
+          position: absolute;
+          top: calc(100% - 2px);
+          width: 100%;
+          height: 2px;
+          border: none;
+        }
+      }
+      input::placeholder {
+        color: #585C76;
+      }
+      .validation-tooltip {
+        //display: none;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+        color: $font-color-3;
+      }
+      .validation-tooltip .active {
+        display: block;
+      }
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+button.big-button {
+  width: 214px;
+  height: 50px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border: none;
+  background: $background-color-third;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  color: $color-white;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+button:hover {
+  transform: scale(1.025);
+}
+
+.tab-active {
+  color: $color-white;
+  border-bottom: 4px solid #4B61F9;
+  z-index: 101;
+}
+.valid-input {
+  background-color: $background-color-six;
+}
+.invalid-input {
+  background-color: $font-color-3;
 }
